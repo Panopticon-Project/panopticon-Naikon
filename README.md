@@ -3,3 +3,5 @@
 https://www.securityweek.com/chinese-naikon-apt-rediscovered-after-new-five-year-stealth-campaign
 
 https://securelist.com/naikons-aria/96899/
+
+https://research.checkpoint.com/2020/naikon-apt-cyber-espionage-reloaded
