@@ -242,3 +242,5 @@ https://securelist.com/naikons-aria/96899/
 https://research.checkpoint.com/2020/naikon-apt-cyber-espionage-reloaded
 
 https://www.securityweek.com/multiple-chinese-groups-share-same-rtf-weaponizer
+
+https://threatconnect.com/blog/camerashy-intro/
