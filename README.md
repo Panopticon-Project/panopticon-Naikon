@@ -222,13 +222,23 @@ Use list
 ## Copy and paste everything from Campaign or Date Range through to Reports for a new campaign or date range
 
 ## Raw Intelligence - start of footer
-Any further notes to be added to the framework would be added here.
-
-## Links - end of footer
-Any new articles to be added here.
 
 https://www.securityweek.com/chinese-naikon-apt-rediscovered-after-new-five-year-stealth-campaign
+Naikon, a Chinese APT group
+The key elements of the newer campaign are that it appears to concentrate on geopolitical espionage against national governments including  Australia, Indonesia, the Philippines, Vietnam, Thailand, Myanmar and Brunei; it uses a new and different backdoor (named Aria-body by its authors); it is known to launch 'trusted' attacks from one compromised agency against others; and to use compromised servers within ministries as its own C&C servers. The implication is that Naikon's regional activities did not stop after 2015, but merely changed methodology.
+The research started when Check Point detected a malicious email sent from an APAC government embassy to the Australian government. The email was found to carry a weaponized RTF built with the RoyalRoad exploit builder. The RTF dropped a loader named intel.wll into the Word startup folder, which in turn downloaded the next stage payload. This initial infection chain is similar to another, probably Chinese campaign, discovered earlier this year and dubbed Vicious Panda.
+"Naikon attempted to attack one of our customers by impersonating a foreign government," explains Lotem Finkelsteen, manager of threat intelligence at Check Point. "That's when they came back onto our radar after a five-year absence, and we decided to investigate further. Our research found that that Naikon is a highly motivated and sophisticated Chinese APT group."
+This research further discovered two other infection chains being used by the same attackers. The first uses an archive file that contains both a legitimate executable and a malicious DLL used in a DLL hijacking technique. The second is directly via an executable file, which serves as a loader. In all cases the ultimate payload is the previously unknown Aria-body custom-built backdoor. The researchers found Aria-body variants being compiled as early as 2018, and Aria-body loaders going back to 2017.
+The loader appears to have been specifically crafted for the Aria-body RAT. It establishes persistence, injects itself into another process (such as rundll32.exe and dllhost.exe), decrypts two blobs, if necessary uses a DGA algorithm, contacts the C&C address, retrieves and decrypts the Aria-body DLL, and loads and executes an exported function of the DLL.
+The RAT's functionality is fairly standard, but varies between different variants. For example, a keylogger and a reverse socks proxy were added at some point before February 2018, while a loading extensions module was added by December 2019. The RAT starts by gathering data on the compromised system: hostname, computer-name, username, domain name, windows version, processor ~MHz, MachineGuid, 64bit or not, and public IP (using checkip.amazonaws.com).
+Communication with the C&C is either HTTP or TCP, and the gathered data -- zipped and password protected -- is sent with the password to the C&C. Aria-body then keeps listening to the C&C for further commands, which are received and executed.
+Attribution of the campaign to the Naikon group isn't based simply on the similarity to the targets described by Kaspersky in 2015. The earlier campaign used a RAT supporting 48 commands that Check Point refers to as XsFunction. Check Point Research found several overlaps between the two RATs -- such as, for example, identical debug strings.  Both RATs use the same hashing function (djb2), while some functions are identical between the two RATs. There is even an overlap in the attackers' infrastructure where four of the C&C servers shared IPs with a domain that resolves to the same IP as a domain reported by Kaspersky in 2015.
+By utilizing new server infrastructure, ever-changing loader variants, in-memory fileless loading, as well as a new backdoor -- the Naikon APT group was able to prevent analysts from tracing their activity back to them.
+
+## Links - end of footer
 
 https://securelist.com/naikons-aria/96899/
 
 https://research.checkpoint.com/2020/naikon-apt-cyber-espionage-reloaded
+
+https://www.securityweek.com/multiple-chinese-groups-share-same-rtf-weaponizer
