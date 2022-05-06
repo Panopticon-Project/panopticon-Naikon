@@ -18,3 +18,5 @@ https://www.bleepingcomputer.com/news/security/cyberspies-target-military-organi
 https://www.bitdefender.com/blog/labs/new-nebulae-backdoor-linked-with-the-naikon-group
 
 https://westoahu.hawaii.edu/cyber/global-weekly-exec-summary/advanced-persistent-threat-naikon-deploys-new-malware/
+
+https://cluster25.io/2022/04/29/lotus-panda-awake-last-strike/
